@@ -4,18 +4,12 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
 class Solution(object):
     def searchBST(self, root, val):
-        """
-        :type root: TreeNode
-        :type val: int
-        :rtype: TreeNode
-        """
-        if root is None or root.val == val:
-            return root
-        return (
+        while root is not None and root.val!= val:
+            root = root.left if val < root.val else root.right 
 
-            self.searchBST(root.left,val)
-            if root.val>val
-            else self.searchBST(root.right,val)
-        )
+        return root
+        
